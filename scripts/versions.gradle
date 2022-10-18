@@ -41,8 +41,35 @@ versions.ui_test_manifest = "1.1.1"
 
 def deps = [:]
 
+def square_up = [:]
+def square_up_prefix = "com.squareup"
+def retrofit2_prefix = "retrofit2"
+square_up.retrofit = "${square_up_prefix}.${retrofit2_prefix}:retrofit:$versions.retrofit"
+square_up.retrofit_converter = "${square_up_prefix}.${retrofit2_prefix}:converter-gson:$versions.retrofit"
+square_up.logging_interceptor = "${square_up_prefix}.okhttp3:logging-interceptor:$versions.logging_interceptor"
+deps.square_up = square_up
 
+def lifecycle = [:]
+def lifecycle_prefix = "androidx.lifecycle:lifecycle"
+lifecycle.livedata = "${lifecycle_prefix}-livedata-ktx:$versions.lifecycle"
+lifecycle.viemodel = "${lifecycle_prefix}-viewmodel-ktx:$versions.lifecycle"
+deps.lifecycle =lifecycle
 
+def room = [:]
+def room_prefix = "androidx.room:room"
+room.runtime = "${room_prefix}-runtime:$versions.room"
+room.compiler = "${room_prefix}-compiler:$versions.room"
+room.ktx = "${room_prefix}-ktx:$versions.room"
+deps.room = room
+
+def testing = [:]
+testing.junit = "junit:junit:$versions.junit"
+testing.androidx_junit = "androidx.test.ext:junit:$versions.androidx_junit"
+testing.espresso_core = "androidx.test.espresso:espresso-core:$versions.espresso_core"
+deps.testing = testing
+
+ext.deps = deps
+ext.versions = versions
 
 def build_versions = [:]
 build_versions.min_sdk = 21
