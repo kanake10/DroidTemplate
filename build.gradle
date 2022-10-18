@@ -2,7 +2,7 @@
 buildscript {
     ext{
         compose_ui_version = "1.1.1"
-        kotlinVersion = "1.7.10"
+        kotlinVersion = "1.6.10"
         ktlintPluginVersion = "11.0.0"
         detektVersion = "1.17.0"
         versionsPluginVersion = "0.29.0"
