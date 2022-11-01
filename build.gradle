@@ -28,7 +28,7 @@ buildscript {
     }
 }
 
-//apply from: "scripts/githooks.gradle"
+apply from: "scripts/githooks.gradle"
 
 
 //subprojects {
@@ -40,8 +40,8 @@ buildscript {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//
-//afterEvaluate {
-//    // We install the hook at the first occasion
-//    tasks['clean'].dependsOn installGitHooks
-//}
+
+afterEvaluate {
+    // We install the hook at the first occasion
+    tasks['clean'].dependsOn installGitHooks
+}
