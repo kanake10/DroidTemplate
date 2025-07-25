@@ -4,16 +4,19 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     //alias(libs.plugins.hilt.android)
     alias(libs.plugins.devtools.ksp)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.cash.paparazzi)
+    alias(libs.plugins.kotlinter)
 }
 
 android {
     namespace = "com.example.droidtemplate"
-    compileSdk = 36
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.example.droidtemplate"
-        minSdk = 21
-        targetSdk = 36
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.compileSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
@@ -22,29 +25,28 @@ android {
     }
     buildFeatures {
         buildConfig = true
+        compose = true
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
+
     }
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
-    }
-    buildFeatures {
-        compose = true
+        jvmTarget = "17"
     }
 }
 
@@ -65,6 +67,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
 
+tasks.formatKotlinMain {
+    exclude { it.file.path.contains("build/")}
+}
 
+tasks.lintKotlinMain {
+    exclude { it.file.path.contains("build/")}
 }

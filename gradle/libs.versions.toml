@@ -1,10 +1,10 @@
 [versions]
-agp = "8.6.0"
-kotlin = "2.1.10"
+agp = "8.11.1"
+kotlin = "2.2.0"
 coreKtx = "1.16.0"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.0"
-composeBom = "2024.04.01"
+composeBom = "2025.07.00"
 retrofit = "2.9.0"
 okhttp = "4.11.0"
 room = "2.6.1"
@@ -24,7 +24,16 @@ appcompat = "1.7.0"
 material = "1.12.0"
 runtimeLivedata = "1.7.8"
 coil = "2.5.0"
-devtoolsKsp = "2.1.10-1.0.30"
+devtoolsKsp = "2.2.0-2.0.2"
+koin ="3.2.0"
+leakCanary = "2.14"
+minSdk = "23"
+compileSdk = "36"
+timber = "5.0.1"
+dataStore = "1.1.7"
+kotlinter = "5.1.1"
+detektGradlePlugin = "1.23.8"
+paparazzi = "1.3.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -64,6 +73,14 @@ androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtim
 
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 
+koin = { module = "org.koin:koin-android", version.ref = "koin" }
+koin-vm = { module = "org.koin:koin-androidx-viewmodel", version.ref = "koin" }
+koin-androidx = { module = "org.koin:koin-androidx-scope", version.ref = "koin" }
+
+leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+datastore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
+
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 junit4-ext = { module = "androidx.test.ext:junit", version.ref = "junit4Ext" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
@@ -82,3 +99,7 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "devtoolsKsp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
+cash-paparazzi = { id = "app.cash.paparazzi", version.ref = "paparazzi" }
