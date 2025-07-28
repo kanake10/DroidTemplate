@@ -3,10 +3,11 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
-  //  alias(libs.plugins.hilt.android) apply false
+    alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.devtools.ksp) apply false
     alias(libs.plugins.kotlin.parcelize).apply(false)
     alias(libs.plugins.kotlinter).apply(false)
+    alias(libs.plugins.kover).apply(false)
     alias(libs.plugins.detekt).apply(true)
     alias(libs.plugins.cash.paparazzi).apply(false)
 }
