@@ -34,6 +34,7 @@ kotlinter = "5.1.1"
 detektGradlePlugin = "1.23.8"
 paparazzi = "1.3.5"
 kover = "0.9.1"
+workManager = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -79,6 +80,10 @@ koin-compose= { group = "io.insert-koin", name = "koin-androidx-compose", versio
 leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakCanary" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 datastore = { module = "androidx.datastore:datastore", version.ref = "dataStore" }
+
+work-manager = { module = "androidx.work:work-runtime-ktx", version = "workManager" }
+work-manager-dagger = { module = "androidx.hilt:hilt-work", version = "workManager" }
+work-manager-dagger-ksp = { module = "androidx.hilt:hilt-compiler", version = "workManager" }
 
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 junit4-ext = { module = "androidx.test.ext:junit", version.ref = "junit4Ext" }

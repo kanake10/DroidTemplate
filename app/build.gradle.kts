@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.devtools.ksp)
     alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.cash.paparazzi)
     alias(libs.plugins.kotlinter)
     alias(libs.plugins.kover)
 }
@@ -88,10 +87,10 @@ dependencies {
 
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    implementation(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.kotlinx.coroutines.android)
@@ -99,9 +98,9 @@ dependencies {
 
     implementation(libs.coil.compose)
 
-//    implementation(libs.koin.android)
-//    implementation(libs.koin.core)
-//    implementation(libs.koin.compose)
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
 
     implementation(libs.leakcanary)
     implementation(libs.timber)
