@@ -21,7 +21,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@v3
 
       - name: Grant execute permission to Gradle
         run: chmod +x ./gradlew
