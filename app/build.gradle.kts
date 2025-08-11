@@ -7,6 +7,9 @@ plugins {
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.kotlinter)
     alias(libs.plugins.kover)
+    alias(libs.plugins.kotlin.serialization)
+//    id("com.google.gms.google-services")
+//    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -72,9 +75,18 @@ dependencies {
     testImplementation(libs.google.truth)
     testImplementation(libs.androidx.arch.core.testing)
     testImplementation(libs.robolectric)
+    testImplementation(libs.mockwebserver)
     // Instrumentation Testing
     androidTestImplementation(libs.junit4.ext)
     androidTestImplementation(libs.espresso.core)
+
+    implementation(platform("com.google.firebase:firebase-bom:33.11.0"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-crashlytics-ktx")
+    implementation("com.google.firebase:firebase-perf-ktx")
+    implementation(libs.firebase.auth)
+
+    implementation(libs.serialization)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)

@@ -10,6 +10,8 @@ plugins {
     alias(libs.plugins.kover).apply(false)
     alias(libs.plugins.detekt).apply(true)
     alias(libs.plugins.cash.paparazzi).apply(false)
+//    alias(libs.plugins.google.services) apply false
+//    id("com.google.firebase.crashlytics") version "3.0.3" apply false
 }
 
 apply(from = "buildscripts/githooks.gradle")
