@@ -39,7 +39,7 @@ googleServices = "4.4.2"
 firebaseCrashlytics = "3.0.3"
 mockWebServer = "4.10.0"
 firebaseCrashlyticsKtx = "19.4.2"
-firebaseAuth = "23.2.0"
+firebaseAuth = "23.2.1"
 serialization = "1.7.3"
 
 [libraries]
